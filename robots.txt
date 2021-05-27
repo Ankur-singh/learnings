@@ -1,1 +1,1 @@
-Sitemap: https://ankur-singh.github.io/Learnings/sitemap.xml
+Sitemap: https://ankur-singh.github.io/learnings/sitemap.xml
