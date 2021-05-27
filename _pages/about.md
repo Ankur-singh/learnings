@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Me
+external_url: https://google.com/
 permalink: /about/
 ---
 
