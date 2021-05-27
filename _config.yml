@@ -34,7 +34,7 @@ url: "https://Ankur-singh.github.io" # the base hostname & protocol for your sit
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/Learnings" # the subpath of your site, e.g. "/blog".
+baseurl: "/learnings" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
