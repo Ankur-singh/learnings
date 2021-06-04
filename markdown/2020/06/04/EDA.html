@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to - EDA | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="How to - EDA" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Steps I follow to do EDA on any new dataset." />
+<meta property="og:description" content="Steps I follow to do EDA on any new dataset." />
+<link rel="canonical" href="https://ankur-singh.github.io/learnings/markdown/2020/06/04/EDA.html" />
+<meta property="og:url" content="https://ankur-singh.github.io/learnings/markdown/2020/06/04/EDA.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-04T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Steps I follow to do EDA on any new dataset.","url":"https://ankur-singh.github.io/learnings/markdown/2020/06/04/EDA.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ankur-singh.github.io/learnings/markdown/2020/06/04/EDA.html"},"headline":"How to - EDA","dateModified":"2020-06-04T00:00:00-05:00","datePublished":"2020-06-04T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/learnings/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ankur-singh.github.io/learnings/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/learnings/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/learnings/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/learnings/_pages/about.html">About Me</a><a class="page-link" href="/learnings/search/">Search</a><a class="page-link" href="/learnings/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to - EDA</h1><p class="page-description">Steps I follow to do EDA on any new dataset.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-04T00:00:00-05:00" itemprop="datePublished">
+        Jun 4, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/learnings/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#how-to--eda">How to : EDA</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#steps">Steps</a></li>
+</ul>
+</li>
+</ul><h1 id="how-to--eda">
+<a class="anchor" href="#how-to--eda" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to : EDA</h1>
+
+<p>The content of this blog was originally written as personal notes that I created after reading “Think Stats 2e”. Since then, I follow it every time I start working with a new dataset. Finally, I decided to turn this into a blog post for two reasons:</p>
+<ol>
+  <li>So, others can also benefit from it.</li>
+  <li>I can access it from anywhere.</li>
+</ol>
+
+<p>Without ado, lets dive right in . . .</p>
+
+<hr>
+
+<h2 id="steps">
+<a class="anchor" href="#steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps</h2>
+
+<p>These are the steps that I follow when performing EDA on some dataset.</p>
+
+<p><img src="/learnings/images/eda_steps.png" alt="" title="EDA process"></p>
+
+<ol>
+  <li>
+    <p><strong>Loading and cleaning</strong>:</p>
+
+    <p>Whatever format the data is in, it usually takes some time and effort to read the data, clean and transform it, and check that everything made it through the translation process intact.
+ Pandas make it super easy to load data from any major file format. Immediately after loading the data, I like to call <code class="language-plaintext highlighter-rouge">df.head()</code> and <code class="language-plaintext highlighter-rouge">df.shape</code> to see if everything was loaded correctly. 
+ Pandas makes cleaning data super easy &amp; FUN! But there are situations where you might have to use other tools as well. Don’t worry, python has plenty of them.</p>
+  </li>
+  <li>
+    <p><strong>Single variable explorations</strong>:</p>
+
+    <p>I usually start by examining one variable at a time, finding out what the variables mean, looking at distributions of the values, and choosing appropriate summary statistics.
+ In pandas, you can simple call <code class="language-plaintext highlighter-rouge">df.describe()</code> to see summary stats for all the numerical columns. Often times, just by looking at the output, you can easily find a lot about the data. If you see something fishy, then thats the feature you should explore next. 
+ PS: People often struggle to figure out what to do next in EDA. Look at the output of  <code class="language-plaintext highlighter-rouge">df.describe()</code>. Its a good starting point.</p>
+  </li>
+  <li>
+    <p><strong>Pair-wise explorations</strong>:</p>
+
+    <p>To identify possible relationships between variables, I look at tables and scatter plots, and compute correlations and linear fits.
+ Scatter plots are great, but at times they can be misleading. Hence, its difficult to make a good scatter plot that is not misleading and might take some time getting use to. I use seaborn, matplotlib and pandas to make plots.
+ One can easily find correlations between different features by calling <code class="language-plaintext highlighter-rouge">df.corr()</code>. In the beginning, I struggled to interpreting the relationship correctly. With some practice you can learn to understand them better.
+ May be some other time, I might write a blog on it. For now, take this . . . keep visualizing your data.</p>
+  </li>
+  <li>
+    <p><strong>Multivariate analysis</strong>:</p>
+
+    <p>If there are apparent relationships between variables, I use multiple regression to add control variables and investigate more complex relationships.
+ Both pearson’s correlation &amp; linear fit can only measure linear relationships. But most of the relationship in empirical data is complex &amp; non-linear. So, you need to be careful.
+ Python has some amazing libraries for exploring linear &amp; multivariate relations like statsmodel, scipy, sklearn, etc.</p>
+  </li>
+  <li>
+    <p><strong>Estimation and hypothesis testing</strong>:</p>
+
+    <p>When reporting statistical results, it is important to answer three questions: How big is the effect? How much variability should we expect if we run the same measurement again on different sample? Is it possible that the apparent effect is due to chance?
+ Model estimation is a great way to describe you data. With good estimates, you can learn a lot more about the data distribution with very few samples.
+ This is the part where some domain expertise will take you a long way. Say you are working with health data. You need to know what is the range of “blood pressure” that is considered “High BP” and “Low BP”. Same goes for “blood sugar level”. Another thing to know it what common patterns to expect if someone has high BP.
+ With some domain knowledge and common sense, you can easily come up with list of things (or constraints) that should be true/false for the data. These are called hypothesis &amp; the process of verifying these constraints is called hypothesis testing.</p>
+  </li>
+  <li>
+    <p><strong>Visualization</strong>:</p>
+
+    <p>Visualization is not a step as such. I have still written it because it should be used at every stage of EDA. During exploration, visualization is an important tool for finding possible relationships and effects. Then if an apparent effect holds up to scrutiny, visualization is an effective way to communicate results.
+ I think visualization is more of an ART than science. So, one needs a lot of practice to get mastery over it. You cannot learn to do it from others.</p>
+  </li>
+</ol>
+
+<p>This is the 5 step process that I follow, and the tools that I use while doing EDA. Hope this blog was helpful. I will be discussing each of these steps, in depth, in my future blogs. So, stay tuned and thank you so much for reading.</p>
+
+  </div><a class="u-url" href="/learnings/markdown/2020/06/04/EDA.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/learnings/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/learnings/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/learnings/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/learnings/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/learnings/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
